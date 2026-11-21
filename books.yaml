@@ -1,0 +1,20 @@
+# Fields: id, title, author, publisher, subject (Physics | Chemistry | Mathematics),
+#         category, description, cover (image path/URL, optional), added (YYYY-MM-DD),
+#         published (true/false), editions: [{name, file}]
+books:
+  - id: demo-physics
+    title: "Demonstration entry: Physics"
+    subject: Physics
+    category: Demo
+    description: "This is a placeholder so you can see how a book looks. Delete it once your own books are in."
+    added: 2026-11-21
+    published: true
+    editions: []
+  - id: demo-maths
+    title: "Demonstration entry: Mathematics"
+    subject: Mathematics
+    category: Demo
+    description: "Another placeholder. Not a real book."
+    added: 2026-11-20
+    published: true
+    editions: []
