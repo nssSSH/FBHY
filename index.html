@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+==<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -161,7 +161,7 @@
         const live=()=>BOOKS.filter(b=>b.published!==false);
         function toast(m,err){const t=$("#toast");t.textContent=m;t.className="on"+(err?" err":"");clearTimeout(toast.h);toast.h=setTimeout(()=>t.className="",4200)}
         function cover(b){return b.cover?`<img class="cover" src="${esc(b.cover)}" alt="Cover of ${esc(b.title)}">`:`<div class="cover ph"><span>${esc(b.title)}</span></div>`}
-        function row(b){const f=(b.editions||[]).find(e=>e&&e.file);return `<div class="it"><a class="t" href="#/book/${encodeURIComponent(b.id)}">${esc(b.title)}</a><span class="d">${esc([b.author,b.category].filter(Boolean).join(" · ")||b.description||"")}</span><span class="tag">${esc(b.subject||"")}</span>${f?`<a class="q" href="${esc(f.file)}" download target="_blank" rel="noopener">Download</a>`:`<span class="q off">Soon</span>`}</div>`}
+        function row(b){const f=(b.editions||[]).find(e=>e&&e.file);return `<div class="it"><a class="t" href="#/book/${encodeURIComponent(b.id)}">${esc(b.title)}</a><span class="d">${esc([b.author,b.category].filter(Boolean).join(" · ")||b.description||"")}</span><span class="tag">${esc(b.subject||"")}</span>${f?`<a class="q" href="${esc(f.file)}" rel="noopener">Download</a>`:`<span class="q off">Soon</span>`}</div>`}
         const byNew=(a,b)=>String(b.added).localeCompare(String(a.added));
         async function load(){
           try{const r=await fetch("books.yaml?"+Date.now());if(!r.ok)throw new Error("books.yaml returned "+r.status);
@@ -197,7 +197,7 @@
           return `<div class="page"><div class="doc"><div class="crumb"><a href="#/stacks">Library</a> / <a href="#/stacks${b.subject?"?s="+b.subject:""}">${esc(b.subject||"Books")}</a></div>
           <div class="bk">${cover(b)}<div><h1>${esc(b.title)}</h1><p class="lead">${esc([b.author,b.publisher].filter(Boolean).join(" · "))}</p>${b.published===false?`<div class="blk"><b>Unpublished</b><p>Only you can see this book.</p></div>`:`<div class="blk"><b>Free to download</b><p>No account, no sign-up.</p></div>`}</div></div>
           <h2 id="details">Details</h2><table>${r("Author",b.author)}${r("Publisher",b.publisher)}${r("Subject",b.subject)}${r("Category",b.category)}${r("Added",b.added)}${r("Reference",call(b,i))}</table>
-          <h2 id="download">Download</h2><div class="ed">${eds.length?eds.map(e=>`<a class="b brand dlb" href="${esc(e.file)}" download target="_blank" rel="noopener">Download ${esc(e.name||"book")}</a>`).join(""):`<span class="note">The file hasn’t been added yet.</span>`}</div>
+          <h2 id="download">Download</h2><div class="ed">${eds.length?eds.map(e=>`<a class="b brand dlb" href="${esc(e.file)}" rel="noopener">Download ${esc(e.name||"book")}</a>`).join(""):`<span class="note">The file hasn’t been added yet.</span>`}</div>
           ${b.description?`<h2 id="about">About this book</h2><p>${esc(b.description)}</p>`:""}
           ${more.length?`<h2 id="more">More in ${esc(b.subject)}</h2><div class="list">${more.map(row).join("")}</div>`:""}</div>
           <nav class="outline"><b>On this page</b><a href="#" data-go="details">Details</a><a href="#" data-go="download">Download</a>${b.description?`<a href="#" data-go="about">About</a>`:""}${more.length?`<a href="#" data-go="more">More in ${esc(b.subject)}</a>`:""}</nav></div>`}
@@ -227,7 +227,8 @@
           <div class="row"><div><label>Author</label><input name="author"></div><div><label>Publisher</label><input name="publisher"></div></div>
           <div class="row"><div><label>Hall</label><select name="subject">${SUBJ.map(s=>`<option>${s}</option>`).join("")}</select></div><div><label>Category (e.g. Mechanics, Organic)</label><input name="category"></div></div>
           <div><label>Description</label><textarea name="description"></textarea></div>
-          <div class="row"><div><label>PDF file (leave empty to keep the current one)</label><input type="file" name="pdf" accept="application/pdf"></div><div><label>Edition name</label><input name="edname" placeholder="e.g. PDF"></div></div>
+          <div class="row"><div><label>Uploadables.io file link</label><input type="url" name="filelink" placeholder="https://uploadables.io/..." required></div><div><label>Edition name</label><input name="edname" placeholder="e.g. PDF"></div></div>
+          <p class="note">Upload the PDF to Uploadables.io first, then paste its share/download link here. Visitors will be redirected to that link.</p>
           <div><label>Cover image (optional, JPG or PNG)</label><input type="file" name="cov" accept="image/*"></div>
           <label><input type="checkbox" name="published" checked> Published (visible to everyone)</label>
           <div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn" id="save">Save book</button><button type="button" class="btn" id="reset">Clear form</button></div></form>
@@ -243,7 +244,7 @@
             catch(x){admin=null;toast(x.message,1);$("#unlock").textContent="Unlock"}};
           const bf=$("#bf");if(!bf)return;
           const fill=i=>{const b=BOOKS[i];for(const k of["id","title","author","publisher","subject","category","description"])bf.elements[k].value=b[k]||"";
-            bf.elements.published.checked=b.published!==false;bf.elements.edname.value=b.editions?.[0]?.name||"";scrollTo({top:0,behavior:"smooth"})};
+            bf.elements.published.checked=b.published!==false;bf.elements.edname.value=b.editions?.[0]?.name||"";bf.elements.filelink.value=b.editions?.[0]?.file||"";scrollTo({top:0,behavior:"smooth"})};
           $("#reset").onclick=()=>{bf.reset();bf.elements.id.value=""};
           $("#lock").onclick=()=>{admin=null;render();toast("Signed out.")};
           $("#exp").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([jsyaml.dump({books:BOOKS},{lineWidth:-1})],{type:"text/yaml"}));a.download="books.yaml";a.click()};
@@ -258,9 +259,13 @@
             try{const title=f.title.value.trim();let id=f.id.value||title.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"book-"+Date.now();
               const old=BOOKS.find(b=>b.id===id),entry={id,title,author:f.author.value.trim()||undefined,publisher:f.publisher.value.trim()||undefined,subject:f.subject.value,category:f.category.value.trim()||undefined,
                 description:f.description.value.trim()||undefined,cover:old?.cover,added:old?.added||new Date().toISOString().slice(0,10),published:f.published.checked,editions:old?.editions||[]};
-              const pdf=f.pdf.files[0],cov=f.cov.files[0];
-              if(pdf){const p="books/"+id+".pdf";await putFile(p,await b64(pdf),"Upload "+p);entry.editions=[{name:f.edname.value.trim()||"PDF",file:p}]}
-              else if(entry.editions[0]&&f.edname.value.trim())entry.editions[0].name=f.edname.value.trim();
+              const filelink=f.filelink.value.trim(),cov=f.cov.files[0];
+              if(filelink){
+                let parsed;
+                try{parsed=new URL(filelink)}catch(_){throw new Error("Enter a valid Uploadables.io link.")}
+                if(parsed.protocol!=="https:"||parsed.hostname!=="uploadables.io"&&!parsed.hostname.endsWith(".uploadables.io"))throw new Error("Please enter an HTTPS Uploadables.io link.");
+                entry.editions=[{name:f.edname.value.trim()||"PDF",file:parsed.href}];
+              }else if(entry.editions[0]&&f.edname.value.trim())entry.editions[0].name=f.edname.value.trim();
               if(cov){const p="covers/"+id+"."+(cov.name.split(".").pop()||"jpg");await putFile(p,await b64(cov),"Upload "+p);entry.cover=p}
               await mutate(L=>{const k=L.findIndex(y=>String(y.id)===id);k>-1?L[k]=entry:L.unshift(entry)},(old?"Edit ":"Add ")+id);
               toast("Saved. It appears publicly once the site rebuilds.");render()}
@@ -280,7 +285,7 @@
             document.querySelectorAll(".chips button").forEach(b=>b.onclick=()=>{PAGE=60;b.dataset.s?q.set("s",b.dataset.s):q.delete("s");location.hash="#/stacks?"+q});
             const m=$("#more");if(m)m.onclick=()=>{PAGE+=60;render()}}
           document.querySelectorAll("[data-go]").forEach(a=>a.onclick=e=>{e.preventDefault();document.getElementById(a.dataset.go)?.scrollIntoView({behavior:"smooth"})});
-          document.querySelectorAll(".dlb,.q:not(.off)").forEach(a=>a.addEventListener("click",()=>toast("Download started.")));
+          document.querySelectorAll(".dlb,.q:not(.off)").forEach(a=>a.addEventListener("click",()=>toast("Opening the download link…")));
           const hs=$("#hs");if(hs)hs.onclick=openS;
           keeperEvents();
           if(seg[1]!=="stacks"||!qs)scrollTo(0,0)
