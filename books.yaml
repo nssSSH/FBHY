@@ -1,2 +1,13 @@
 # The Night Stacks library. Managed from the Keeper’s Door.
-books: []
+books:
+  - id: concepts-of-physics
+    title: Concepts of Physics
+    author: HC Verma
+    publisher: Bharati Bhavan
+    subject: Physics
+    description: The best and OG book for Physics.
+    added: '2026-11-21'
+    published: true
+    editions:
+      - name: N/A
+        file: books/concepts-of-physics.pdf
