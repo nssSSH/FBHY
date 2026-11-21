@@ -1,10 +1,2 @@
 # The Night Stacks library. Managed from the Keeper’s Door.
-books:
-  - id: demo-maths
-    title: 'Demonstration entry: Mathematics'
-    subject: Mathematics
-    category: Demo
-    description: Another placeholder. Not a real book.
-    added: 2026-11-20T00:00:00.000Z
-    published: true
-    editions: []
+books: []
