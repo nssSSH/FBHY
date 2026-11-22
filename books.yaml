@@ -1,5 +1,19 @@
-# The Night Stacks library. Managed from the Keeper’s Door.
+# Freebooks Hell Yeah library. Managed from the Admin page.
 books:
+  - id: black-book
+    title: Black Book
+    author: Vikas Gupta
+    publisher: Balaji Publications
+    subject: Mathematics
+    category: Algebra
+    description: A very good book for JEE Mains & Advanced. Do it after clearing basics and after your primary modules are done. Has very good quality questions. Recommended :3
+    cover: covers/black-book.jpg
+    added: '2026-11-22'
+    published: true
+    editions:
+      - name: PDF
+        file: https://uploadables.io/B4R5Zx
+    share: true
   - id: concepts-of-physics
     title: Concepts of Physics
     author: HC Verma
