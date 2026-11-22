@@ -5,9 +5,10 @@ books:
     author: HC Verma
     publisher: Bharati Bhavan
     subject: Physics
-    description: The best and OG book for Physics.
+    category: Mechanics
+    description: The GOAT and OG book of Physics
     added: '2026-11-21'
     published: true
     editions:
-      - name: N/A
-        file: books/concepts-of-physics.pdf
+      - name: PDF
+        file: https://uploadables.io/CcyUDo
