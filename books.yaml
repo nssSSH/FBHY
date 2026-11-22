@@ -1,5 +1,19 @@
 # Freebooks Hell Yeah library. Managed from the Admin page.
 books:
+  - id: top-500-pyqs-chemistry-mathongo
+    title: Top 500 PYQs - Chemistry - Mathongo
+    author: MathonGo
+    publisher: MathonGo
+    subject: Chemistry
+    category: PYQs
+    description: A compilation of top 500 JEE Mains PYQs for Chemistry. A must for question practice.
+    cover: covers/top-500-pyqs-chemistry-mathongo.png
+    added: '2026-11-22'
+    published: true
+    editions:
+      - name: PDF
+        file: https://uploadables.io/yk6s7X
+    share: true
   - id: black-book
     title: Black Book
     author: Vikas Gupta
