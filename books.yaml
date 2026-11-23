@@ -1,5 +1,19 @@
 # Freebooks Hell Yeah library. Managed from the Admin page.
 books:
+  - id: advanced-problems-in-organic-chemistry-ms-chouhan
+    title: Advanced Problems in Organic Chemistry - MS Chouhan
+    author: MS Chouhan
+    publisher: Balaji Publications
+    subject: Chemistry
+    category: Organic
+    description: Extremely good book for question practice of organic chemistry. Has Advanced level questions.
+    cover: covers/advanced-problems-in-organic-chemistry-ms-chouhan.jpg
+    added: '2026-11-23'
+    published: true
+    editions:
+      - name: PDF
+        file: https://uploadables.io/1juQqF
+    share: true
   - id: mathongo-pyq-for-maths
     title: MathonGo PYQ for Maths
     author: MathonGo
