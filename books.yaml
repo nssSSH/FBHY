@@ -1,5 +1,22 @@
 # Freebooks Hell Yeah library. Managed from the Admin page.
 books:
+  - id: mechanics-for-jee-main-advanced-anurag-mishra
+    title: Mechanics For JEE Main & Advanced - Anurag Mishra
+    author: Er. Anurag Mishra
+    publisher: Balaji Publications
+    subject: Physics
+    category: Mechanics
+    description: |-
+      Anurag Mishra Mechanics Volume 1 PDF (Shri Balaji) — covers Vectors, Kinematics, Newton's Laws of Motion, Friction, and Work, Energy & Power through calculus-heavy problems. The book assumes you already know the formulas and instead tests whether you can set up a situation correctly, which is exactly the JEE Advanced skill.
+
+      ALT LINK: https://fuckingfast.net/12qtfck3gyn2
+    cover: covers/mechanics-for-jee-main-advanced-anurag-mishra.jpg
+    added: '2026-11-23'
+    published: true
+    editions:
+      - name: PDF
+        file: https://uploadables.io/TjXCZU
+    share: true
   - id: top-500-pyqs-chemistry-mathongo
     title: Top 500 PYQs - Chemistry - Mathongo
     author: MathonGo
