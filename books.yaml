@@ -1,5 +1,19 @@
 # Freebooks Hell Yeah library. Managed from the Admin page.
 books:
+  - id: grb-inorganic-chemistry-op-tandon
+    title: GRB Inorganic chemistry - OP Tandon
+    author: OP Tandon
+    publisher: GRB
+    subject: Chemistry
+    category: Inorganic
+    description: It is a good book for Inorganic chemistry, and has everything in brief. Read NCERT before tho.
+    cover: covers/grb-inorganic-chemistry-op-tandon.jpg
+    added: '2026-11-23'
+    published: true
+    editions:
+      - name: PDF
+        file: https://uploadables.io/AP3IBw
+    share: true
   - id: mechanics-for-jee-main-advanced-anurag-mishra
     title: Mechanics For JEE Main & Advanced - Anurag Mishra
     author: Er. Anurag Mishra
