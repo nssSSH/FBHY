@@ -1,5 +1,19 @@
 # Freebooks Hell Yeah library. Managed from the Admin page.
 books:
+  - id: mathongo-pyq-for-maths
+    title: MathonGo PYQ for Maths
+    author: MathonGo
+    publisher: MathonGo
+    subject: Mathematics
+    category: PYQs
+    description: A PYQ book for JEE Mains 2019-2025. Recommended to do for question practice.
+    cover: covers/mathongo-pyq-for-maths.png
+    added: '2026-11-23'
+    published: true
+    editions:
+      - name: PDF
+        file: https://uploadables.io/ozASlP
+    share: true
   - id: grb-inorganic-chemistry-op-tandon
     title: GRB Inorganic chemistry - OP Tandon
     author: OP Tandon
