@@ -1,5 +1,19 @@
 # Freebooks Hell Yeah library. Managed from the Admin page.
 books:
+  - id: fundamentals-of-physics-halliday-resnick
+    title: Fundamentals of Physics - Halliday & Resnick
+    author: Halliday & Resnick
+    publisher: Wiley
+    subject: Physics
+    category: Complete
+    description: Fundamentals of Physics is a foundational calculus-based introductory physics textbook originally created by David Halliday and Robert Resnick, and revised since 1990 by Jearl Walker. This is a complete book that covers everything that you need for JEE Physics. Happy reading!
+    cover: covers/fundamentals-of-physics-halliday-resnick.webp
+    added: '2026-11-24'
+    published: true
+    editions:
+      - name: PDF
+        file: https://uploadables.io/eKJNU4
+    share: true
   - id: advanced-problems-in-organic-chemistry-ms-chouhan
     title: Advanced Problems in Organic Chemistry - MS Chouhan
     author: MS Chouhan
