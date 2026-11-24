@@ -1,5 +1,19 @@
 # Freebooks Hell Yeah library. Managed from the Admin page.
 books:
+  - id: cengage-physics
+    title: Cengage Physics
+    author: BM Sharma
+    publisher: Cengage
+    subject: Physics
+    category: Complete
+    description: All the chapters of Cengage physics.
+    cover: covers/cengage-physics.jpg
+    added: '2026-11-24'
+    published: true
+    editions:
+      - name: PDF
+        file: https://uploadables.io/lrSeDy
+    share: true
   - id: fundamentals-of-physics-halliday-resnick
     title: Fundamentals of Physics - Halliday & Resnick
     author: Halliday & Resnick
