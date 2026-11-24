@@ -1,5 +1,19 @@
 # Freebooks Hell Yeah library. Managed from the Admin page.
 books:
+  - id: sbt-physics
+    title: SBT Physics
+    author: Shashi Bhusan Tiwari
+    publisher: N/A
+    subject: Physics
+    category: Complete
+    description: Extremely good level book for Physics!
+    cover: covers/sbt-physics.jpg
+    added: '2026-11-24'
+    published: true
+    editions:
+      - name: PDF
+        file: https://uploadables.io/ioB69G
+    share: true
   - id: cengage-chemistry
     title: Cengage Chemistry
     author: KS Verma, et at.
