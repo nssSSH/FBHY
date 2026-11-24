@@ -1,5 +1,19 @@
 # Freebooks Hell Yeah library. Managed from the Admin page.
 books:
+  - id: cengage-maths
+    title: Cengage Maths
+    author: G. Tiwari
+    publisher: Cengage
+    subject: Mathematics
+    category: Complete
+    description: All the chapters of Cengage Maths.
+    cover: covers/cengage-maths.jpg
+    added: '2026-11-24'
+    published: true
+    editions:
+      - name: PDF
+        file: https://uploadables.io/lrSeDy
+    share: true
   - id: cengage-physics
     title: Cengage Physics
     author: BM Sharma
